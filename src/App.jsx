@@ -4,6 +4,8 @@ import ProtectedRoute from './components/ProtectedRoute.jsx'
 import SetupNotice from './components/SetupNotice.jsx'
 import Calendar from './pages/Calendar.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import HabitForm from './pages/HabitForm.jsx'
+import Habits from './pages/Habits.jsx'
 import Login from './pages/Login.jsx'
 import SignUp from './pages/SignUp.jsx'
 import { supabase } from './supabaseClient.js'
@@ -40,6 +42,9 @@ export default function App() {
       <Route path="/signup" element={<SignUp user={user} />} />
       <Route element={<ProtectedRoute user={user} />}>
         <Route path="/dashboard" element={<Dashboard user={user} />} />
+        <Route path="/habits" element={<Habits />} />
+        <Route path="/habits/new" element={<HabitForm />} />
+        <Route path="/habits/:id/edit" element={<HabitForm />} />
         <Route path="/calendar" element={<Calendar />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />

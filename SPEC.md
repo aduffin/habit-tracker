@@ -10,9 +10,10 @@ Description: A personal habit tracker where users create an account, add habits 
 ## Pages
 
 - **Register / Log in:** create an account or sign in with email and password.
-- **Dashboard (day view):** shows one day at a time, starting on today. All my habits with a checkbox for that day, and weekly progress for that day's week (e.g. "2/3 this week"). Previous/next day buttons and a "Today" button. Can't navigate or check off past today.
-- **Add / Edit habit form:** set a habit's name, description, weekly goal, and color
-- **Calendar:** monthly grid with colored boxes for each habit completed on each day; previous/next month buttons; filter to show one habit or all. 
+- **Dashboard (day view):** for checking off habits. Shows one day at a time, starting on today. Lists all habits with a checkbox for that day and weekly progress for that day's week (e.g. "2/3 this week"). Includes previous/next day buttons and a "Today" button. Can't navigate to or check off days after today.
+- **Habits:** for managing habits. Lists all habits with their color, name, description, and weekly goal, with Edit and Delete buttons and an "Add habit" button.
+- **Add / Edit habit form:** set a habit's name, description, weekly goal, and color (chosen from preset colors).
+- **Calendar:** monthly grid with colored boxes for each habit completed on each day. Includes previous/next month buttons and a filter to show one habit or all.
 
 ## Login
 
@@ -39,3 +40,11 @@ Description: A personal habit tracker where users create an account, add habits 
 - Dashboard and Calendar links work
 - Log out from navbar returns to Login
 - Logged-out users are redirected away from Calendar
+
+### Habits
+
+- Create, edit, and delete habits from the Habits page
+- Habits appear and disappear in Supabase appropriately
+- Delete asks for confirmation; canceling keeps the habit
+- Form blocks missing names and goals outside 1–7
+- A second account can't see the first account's habits (RLS works)

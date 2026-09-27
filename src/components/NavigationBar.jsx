@@ -11,6 +11,7 @@ export default function NavigationBar() {
       <span className="nav-brand">HABIT TRACKER</span>
       <div className="nav-links">
         <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/habits">Habits</NavLink>
         <NavLink to="/calendar">Calendar</NavLink>
         <button className="nav-logout" type="button" onClick={handleLogout}>
           Log out
