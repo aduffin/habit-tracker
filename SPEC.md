@@ -12,6 +12,6 @@ Pages:
 Register / Log in
 Dashboard (day view): shows one day at a time, starting on today. All my habits with a checkbox for that day, and weekly progress for that day's week (e.g. "2/3 this week"). Previous/next day buttons and a "Today" button. Can't navigate or check off past today.
 Add / Edit habit form (including color picker)
-Calendar: monthly grid with colored boxes for each habit completed on each day; previous/next month buttons; filter to show one habit or all
+Calendar: monthly grid with colored boxes for each habit completed on each day; previous/next month buttons; filter to show one habit or all. Week starts on Sunday. 
 
 Login: Yes, habits are personal, so each user only sees their own.
