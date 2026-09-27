@@ -32,3 +32,10 @@ Description: A personal habit tracker where users create an account, add habits 
 - Log in with correct credentials works
 - Wrong password shows an error
 - Logged-out users are redirected away from the dashboard
+
+### Navigation
+
+- Navbar shows only when logged in
+- Dashboard and Calendar links work
+- Log out from navbar returns to Login
+- Logged-out users are redirected away from Calendar
