@@ -48,3 +48,12 @@ Description: A personal habit tracker where users create an account, add habits 
 - Delete asks for confirmation; canceling keeps the habit
 - Form blocks missing names and goals outside 1–7
 - A second account can't see the first account's habits (RLS works)
+
+### Dashboard 
+
+- Checking a habit creates a completion for the viewed date; unchecking removes it
+- Previous/next day and Today buttons work; can't go past today
+- Weekly progress counts Sunday–Saturday and resets at week boundaries
+- Goal-reached cue appears when a weekly goal is met
+- Double-clicking doesn't create duplicates
+- Automated date checks pass (`npm run test:dates`)
