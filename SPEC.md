@@ -57,3 +57,14 @@ Description: A personal habit tracker where users create an account, add habits 
 - Goal-reached cue appears when a weekly goal is met
 - Double-clicking doesn't create duplicates
 - Automated date checks pass (`npm run test:dates`)
+
+### Calendar
+
+- Shows the current month with today highlighted and weeks starting on Sunday
+- Blank cells appear before the 1st and after the last day of the month
+- Completed habits appear as colored boxes that match the Dashboard and Supabase
+- Hovering over a box shows the habit name
+- Legend lists each habit's color and name
+- Previous month works; Next month is disabled on the current month
+- Filter shows one habit's boxes or all habits
+- Deleting a habit removes its boxes from the calendar
