@@ -253,8 +253,9 @@ input {
   background: #fff;
 }
 
-.calendar-day-blank {
-  background: #f7f8f6;
+.calendar-day-other-month {
+  color: #89938c;
+  background: #f2f4f1;
 }
 
 .calendar-day-today {
@@ -271,6 +272,10 @@ input {
   border-radius: 50%;
   font-size: 13px;
   font-weight: 600;
+}
+
+.calendar-day-other-month .calendar-day-number {
+  color: #89938c;
 }
 
 .calendar-day-today .calendar-day-number {

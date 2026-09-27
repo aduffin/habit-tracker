@@ -5,7 +5,7 @@ import {
   addLocalMonths,
   formatLocalDate,
   getLocalMonthGrid,
-  getLocalMonthRange,
+  getLocalMonthGridRange,
   parseLocalDate,
 } from '../utils/localDates.js'
 
@@ -27,7 +27,7 @@ export default function Calendar() {
     month: 'long',
     year: 'numeric',
   }).format(parseLocalDate(viewedMonth))
-  const { startDate, endDate } = getLocalMonthRange(viewedMonth)
+  const { startDate, endDate } = getLocalMonthGridRange(viewedMonth)
   const monthGrid = getLocalMonthGrid(viewedMonth)
   const todayDate = formatLocalDate(new Date())
 
@@ -150,31 +150,28 @@ export default function Calendar() {
                 <div className="calendar-week" role="row" key={weekIndex}>
                   {week.map((date, dayIndex) => {
                     const isToday = date === todayDate
-                    const dayCompletions = date ? completionsByDate.get(date) ?? [] : []
+                    const isOtherMonth = date.slice(0, 7) !== viewedMonth.slice(0, 7)
+                    const dayCompletions = completionsByDate.get(date) ?? []
 
                     return (
                       <div
-                        className={`calendar-day${date ? '' : ' calendar-day-blank'}${isToday ? ' calendar-day-today' : ''}`}
+                        className={`calendar-day${isOtherMonth ? ' calendar-day-other-month' : ''}${isToday ? ' calendar-day-today' : ''}`}
                         role="gridcell"
-                        aria-label={date ? parseLocalDate(date).toLocaleDateString() : undefined}
+                        aria-label={parseLocalDate(date).toLocaleDateString()}
                         key={`${weekIndex}-${dayIndex}`}
                       >
-                        {date && (
-                          <>
-                            <span className="calendar-day-number">{parseLocalDate(date).getDate()}</span>
-                            <div className="calendar-completions">
-                              {dayCompletions.map((completion) => (
-                                <span
-                                  className="calendar-completion"
-                                  key={completion.id}
-                                  title={completion.habit.name}
-                                  aria-label={completion.habit.name}
-                                  style={{ backgroundColor: completion.habit.color }}
-                                />
-                              ))}
-                            </div>
-                          </>
-                        )}
+                        <span className="calendar-day-number">{parseLocalDate(date).getDate()}</span>
+                        <div className="calendar-completions">
+                          {dayCompletions.map((completion) => (
+                            <span
+                              className="calendar-completion"
+                              key={completion.id}
+                              title={completion.habit.name}
+                              aria-label={completion.habit.name}
+                              style={{ backgroundColor: completion.habit.color }}
+                            />
+                          ))}
+                        </div>
                       </div>
                     )
                   })}

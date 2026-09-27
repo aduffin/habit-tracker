@@ -55,12 +55,23 @@ export function getLocalMonthGrid(dateString) {
   const firstWeekday = monthStart.getDay()
   const daysInMonth = new Date(year, month + 1, 0).getDate()
   const totalCells = Math.ceil((firstWeekday + daysInMonth) / 7) * 7
+  const gridStart = new Date(year, month, 1 - firstWeekday)
 
   return Array.from({ length: totalCells / 7 }, (_, weekIndex) => (
     Array.from({ length: 7 }, (_, weekdayIndex) => {
-      const day = weekIndex * 7 + weekdayIndex - firstWeekday + 1
-      if (day < 1 || day > daysInMonth) return null
-      return formatLocalDate(new Date(year, month, day))
+      const date = new Date(gridStart)
+      date.setDate(gridStart.getDate() + weekIndex * 7 + weekdayIndex)
+      return formatLocalDate(date)
     })
   ))
+}
+
+export function getLocalMonthGridRange(dateString) {
+  const monthGrid = getLocalMonthGrid(dateString)
+  const lastWeek = monthGrid[monthGrid.length - 1]
+
+  return {
+    startDate: monthGrid[0][0],
+    endDate: lastWeek[lastWeek.length - 1],
+  }
 }

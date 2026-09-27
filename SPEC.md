@@ -13,7 +13,7 @@ Description: A personal habit tracker where users create an account, add habits 
 - **Dashboard (day view):** for checking off habits. Shows one day at a time, starting on today. Lists all habits with a checkbox for that day and weekly progress for that day's week (e.g. "2/3 this week"). Includes previous/next day buttons and a "Today" button. Can't navigate to or check off days after today.
 - **Habits:** for managing habits. Lists all habits with their color, name, description, and weekly goal, with Edit and Delete buttons and an "Add habit" button.
 - **Add / Edit habit form:** set a habit's name, description, weekly goal, and color (chosen from preset colors).
-- **Calendar:** monthly grid with colored boxes for each habit completed on each day. Includes previous/next month buttons and a filter to show one habit or all.
+- **Calendar:** monthly grid of full Sunday–Saturday weeks, including days from the previous and next month (shown dimmed) so the first and last weeks are complete. Colored boxes show each habit completed on each day. Includes previous/next month buttons and a filter to show one habit or all.
 
 ## Login
 
@@ -60,11 +60,10 @@ Description: A personal habit tracker where users create an account, add habits 
 
 ### Calendar
 
-- Shows the current month with today highlighted and weeks starting on Sunday
-- Blank cells appear before the 1st and after the last day of the month
 - Completed habits appear as colored boxes that match the Dashboard and Supabase
 - Hovering over a box shows the habit name
 - Legend lists each habit's color and name
 - Previous month works; Next month is disabled on the current month
 - Filter shows one habit's boxes or all habits
 - Deleting a habit removes its boxes from the calendar
+- Grid shows full Sunday–Saturday weeks, with other months' days dimmed and their completions still shown
