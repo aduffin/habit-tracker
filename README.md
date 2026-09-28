@@ -8,7 +8,7 @@ A personal habit tracker web app. Create an account, add the habits you want to 
 Built for ED2: Build a Web App with AI, using GitHub Copilot as a coding assistant.
  
 - **Live app:** https://autumns-habit-tracker.netlify.app/login
-- **Demo video:** 
+- **Demo video:** https://youtu.be/spWQWs52VDA
 ## What the App Does
  
 - **Accounts:** sign up, log in, and log out with email and password. Each user only ever sees their own habits.
