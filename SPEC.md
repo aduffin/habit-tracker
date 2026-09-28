@@ -67,3 +67,9 @@ Description: A personal habit tracker where users create an account, add habits 
 - Filter shows one habit's boxes or all habits
 - Deleting a habit removes its boxes from the calendar
 - Grid shows full Sunday–Saturday weeks, with other months' days dimmed and their completions still shown
+
+### Deployment 
+
+- Live on Netlify at https://autumns-habit-tracker.netlify.app
+- Sign up, login, habits, check-offs, and calendar all work on the live site
+- Refreshing on any page works (redirect rule)
